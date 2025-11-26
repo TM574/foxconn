@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+video {
+  image-rendering: crisp-edges;
+  transform: translateZ(0);
+
+  image-rendering: pixelated;
+
+
+}
