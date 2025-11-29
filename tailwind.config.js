@@ -4,17 +4,18 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
-        roboto: ['Roboto', 'sans-serif'],
-        manrope: ['Manrope', 'sans-serif'],
+        
         urbanist: ['Urbanist', 'sans-serif'],
-        caveat: ['Caveat', 'cursive'],
-        pacifico : ['Pacifico', 'cursive'],
-        permanentmarker : ['Permanent Marker', 'cursive'],
-        rocksalt : ['Rock Salt', 'cursive'],
-        homemadeapple : ['Homemade Apple', 'cursive'],
-        shadowsintolight : ['Shadows Into Light', 'cursive'],
+        // sans:['Sans-serif','sans-serif'],
+        caveat: ['Caveat', 'sans-serif'],
+        pacifico : ['Pacifico', 'sans-serif'],
+        permanentmarker : ['Permanent Marker', 'sans-serif'],
+        rocksalt : ['Rock Salt', 'sans-serif'],
+        homemadeapple : ['Homemade Apple', 'sans-serif'],
+         patrick: ['Patrick Hand', 'sans-serif'],
+          kalam: ['Kalam', 'sans-serif'],
+        shadowsintolight : ['Shadows Into Light', 'sans-serif'],
+    handwriting: ['Gloria Hallelujah', 'Caveat', 'sans-serif'],
 
 
       },

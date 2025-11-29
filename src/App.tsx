@@ -19,12 +19,13 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
+
 function App() {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "services", "solutions", "contact"];
+      const sections = ["home", "about", "services","industries", "solutions", "contact"];
 
       let currentSection = "home";
 
@@ -72,7 +73,7 @@ function App() {
     {/* <source src="/bg-video.mp4" type="video/mp4" /> */}
 {/* <source src="https://cdn.pixabay.com/video/2023/08/06/174865-852206004_large.mp4" type="video/mp4" /> */}
   {/* <source src="https://cdn.pixabay.com/video/2022/09/18/131767-751014986_large.mp4" type="video/mp4" /> */}
-<source src="https://cdn.pixabay.com/video/2023/07/17/171948-846113556_large.mp4" type="video/mp4" />
+<source src="/foxconnbg.mp4" type="video/mp4" />
 {/* <source src="https://cdn.pixabay.com/video/2018/02/26/14535-258207669_tiny.mp4" type="video/mp4" /> */}
 
 </video>
@@ -84,18 +85,23 @@ function App() {
 <nav className="sticky top-1 z-50 w-full px-4">
 
   {/* === DESKTOP NAV (unchanged) === */}
-  <div className="hidden md:flex mx-auto w-[60%]
+  <div className="hidden md:flex mx-auto w-[56%]
       bg-gradient-to-br from-white via-slate-200 to-slate-400
       backdrop-blur-xl border border-white/30
       shadow-lg rounded-full px-6 py-2 items-center justify-between">
 
-    {/* Logo */}
-    <div className="flex items-center gap-3">
-      <Server className="w-8 h-8 text-cyan-400" />
-      <a href="#home">
-        <span className="text-xl font-bold text-black">Foxconn</span>
-      </a>
-    </div>
+     {/* Logo */}
+  <div className="flex items-center gap-3">
+   
+    <a href="#home">
+      {/* <span className="text-xl font-bold text-black">Foxconn IT</span> */}
+       <img
+      src="/logo.png"
+      alt="Foxconn Logo"
+      className="h-10 w-auto object-contain"
+    />
+    </a>
+  </div>
 
     {/* Desktop Menu */}
     <div className="flex gap-8 text-sm font-medium">
@@ -125,6 +131,15 @@ function App() {
         }`}
       >
         Services
+      </a>
+      <a href="#industries"
+        className={`transition-colors ${
+          activeSection === "industries"
+            ? "text-cyan-400 font-semibold"
+            : "text-black hover:text-cyan-400"
+        }`}
+      >
+        Industries
       </a>
       <a href="#solutions"
         className={`transition-colors ${
@@ -190,6 +205,11 @@ function App() {
         Services
       </a>
 
+      <a onClick={() => setOpen(false)} href="#industries"
+        className="text-slate-200 hover:text-cyan-400 transition-colors">
+        Indutries
+      </a>
+
       <a onClick={() => setOpen(false)} href="#solutions"
         className="text-slate-200 hover:text-cyan-400 transition-colors">
         Solutions
@@ -215,12 +235,12 @@ function App() {
   <div className="max-w-7xl mx-auto">
     {/* Centered Heading */}
     <div className="text-center mb-16">
-      <h1 className="font-shadowsintolight text-5xl md:text-6xl font-bold  text-cyan-400 mb-6 leading-tight">
+      <h1 className="font-handwriting text-5xl md:text-6xl font-bold  text-cyan-400 mb-6 leading-tight">
         Welcome to{" "}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-700">
           Foxconn IT Infrastructure
         </span>
-        <p className="font-homemadeapple text-xl md:text-2xl mt-3 text-slate-600 mb-8">
+        <p className="font-handwriting text-xl md:text-2xl mt-3 text-slate-600 mb-8">
           Your trusted partner in Dubai for cutting-edge IT solutions
         </p>
       </h1>
@@ -232,7 +252,7 @@ function App() {
       <div className="lg:w-1/2 mt-12">
         
         
-        <p className="font-pacifico text-lg mt-8 text-slate-800 leading-relaxed italic">
+        <p className="font-caveat text-lg mt-8 text-slate-800 leading-relaxed italic">
           "At Foxconn IT Infrastructure, we specialize in delivering a full
           spectrum of digital and infrastructure services — from data
           management and cloud services to custom software development, web
@@ -262,7 +282,7 @@ function App() {
         {/* Feature Box 1 */}
         <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 p-6 rounded-xl border border-cyan-500/20 hover:shadow-lg hover:shadow-cyan-400/50 transition-all">
           <Globe className="w-10 h-10 text-cyan-400 mb-4" />
-          <h3 className="font-homemadeappletext-gray-800 font-semibold mb-2">
+          <h3 className="font-handwritingtext-gray-800 font-semibold mb-2">
             Dubai-based, Global Vision
           </h3>
           <p className="text-slate-700 text-sm">
@@ -325,8 +345,8 @@ function App() {
       <div data-aos="fade-up" data-aos-delay="150"
       className="flex flex-col items-center w-1/3 px-4 ">
         <div className="w-6 h-6 bg-cyan-400 rounded-full mb-6 border-4 border-white"></div>
-        <h3 className="font-pacifico text-2xl font-bold text-cyan-500 mb-3">Our Mission</h3>
-        <p className="font-rocksalt text-slate-500 leading-relaxed">
+        <h3 className="font-caveat text-2xl font-bold text-cyan-500 mb-3">Our Mission</h3>
+        <p className="font-caveat text-slate-500 leading-relaxed">
           To empower businesses in the UAE and beyond by providing reliable, secure, and 
           innovative IT infrastructure and digital services enabling transformation, growth, 
           and success.
@@ -337,8 +357,8 @@ function App() {
       <div data-aos="fade-up" data-aos-delay="300"
       className="flex flex-col items-center w-1/3 px-4">
         <div className="w-6 h-6 bg-cyan-400 rounded-full mb-6 border-4 border-white"></div>
-        <h3 className="font-pacifico text-2xl font-bold text-cyan-500 mb-3">Our Vision</h3>
-        <p className="font-rocksalt text-slate-500 leading-relaxed">
+        <h3 className="font-caveat text-2xl font-bold text-cyan-500 mb-3">Our Vision</h3>
+        <p className="font-caveat text-slate-500 leading-relaxed">
           Becoming a leading IT infrastructure and services provider in the MENA region 
           known for excellence, trust, and innovation.
         </p>
@@ -348,8 +368,8 @@ function App() {
       <div data-aos="fade-up" data-aos-delay="450"
       className="flex flex-col items-center w-1/3 px-4">
         <div className="w-6 h-6 bg-cyan-400 rounded-full mb-6 border-4 border-white"></div>
-        <h3 className="font-pacifico text-2xl font-bold text-cyan-500 mb-3">Who We Are</h3>
-        <p className="font-rocksalt text-slate-500 leading-relaxed">
+        <h3 className="font-caveat text-2xl font-bold text-cyan-500 mb-3">Who We Are</h3>
+        <p className="font-caveat text-slate-500 leading-relaxed">
           Foxconn IT Infrastructure L.L.C is a Dubai-based company delivering 
           end-to-end IT solutions with a team of skilled experts.
         </p>
@@ -387,7 +407,7 @@ function App() {
           className="flex gap-6 items-start">
             <Database className="w-12 h-12 text-cyan-500 flex-shrink-0" />
             <div>
-              <h3 className="font-pacifico text-2xl font-bold text-black mb-3">
+              <h3 className="font-caveat text-2xl font-bold text-black mb-3">
                 Data Entry & Management
               </h3>
               <ul className="font-caveat space-y-2 text-slate-600 leading-relaxed">
@@ -404,7 +424,7 @@ function App() {
           className="flex gap-6 items-start">
             <Code className="w-12 h-12 text-cyan-500 flex-shrink-0" />
             <div>
-              <h3 className="font-pacifico text-2xl font-bold text-black mb-3">
+              <h3 className="font-caveat text-2xl font-bold text-black mb-3">
                 Application Development
               </h3>
               <ul className="font-caveat space-y-2 text-slate-600 leading-relaxed">
@@ -421,7 +441,7 @@ function App() {
           className="flex gap-6 items-start">
             <Globe className="w-12 h-12 text-cyan-500 flex-shrink-0" />
             <div>
-              <h3 className="font-pacifico text-2xl font-bold text-black mb-3">
+              <h3 className="font-caveat text-2xl font-bold text-black mb-3">
                 Web & Media Design
               </h3>
               <ul className="font-caveat space-y-2 text-slate-600 leading-relaxed">
@@ -438,7 +458,7 @@ function App() {
           className="flex gap-6 items-start">
             <Zap className="w-12 h-12 text-cyan-500 flex-shrink-0" />
             <div>
-              <h3 className="font-pacifico text-2xl font-bold text-black mb-3">
+              <h3 className="font-caveat text-2xl font-bold text-black mb-3">
                 Digital Marketing
               </h3>
               <ul className="font-caveat space-y-2 text-slate-600 leading-relaxed">
@@ -462,7 +482,7 @@ function App() {
           className="flex gap-6 items-start">
             <Cloud className="w-12 h-12 text-cyan-500 flex-shrink-0" />
             <div>
-              <h3 className="font-pacifico text-2xl font-bold text-black mb-3">
+              <h3 className="font-caveat text-2xl font-bold text-black mb-3">
                 IT Infrastructure & Cloud
               </h3>
               <ul className="font-caveat space-y-2 text-slate-600 leading-relaxed">
@@ -479,7 +499,7 @@ function App() {
           className="flex gap-6 items-start">
             <Network className="w-12 h-12 text-cyan-500 flex-shrink-0" />
             <div>
-              <h3 className="font-pacifico text-2xl font-bold text-black mb-3">
+              <h3 className="font-caveat text-2xl font-bold text-black mb-3">
                 Network & Telecom
               </h3>
               <ul className="font-caveat space-y-2 text-slate-600 leading-relaxed">
@@ -496,7 +516,7 @@ function App() {
           className="flex gap-6 items-start">
             <GraduationCap className="w-12 h-12 text-cyan-500 flex-shrink-0" />
             <div>
-              <h3 className="font-pacifico text-2xl font-bold text-black mb-3">
+              <h3 className="font-caveat text-2xl font-bold text-black mb-3">
                 Software & IT Training
               </h3>
               <ul className="font-caveat space-y-2 text-slate-600 leading-relaxed">
@@ -513,7 +533,7 @@ function App() {
           className="flex gap-6 items-start">
             <Server className="w-12 h-12 text-cyan-500 flex-shrink-0" />
             <div>
-              <h3 className="font-pacifico text-2xl font-bold text-black mb-3">
+              <h3 className="font-caveat text-2xl font-bold text-black mb-3">
                 Data Center Services
               </h3>
               <ul className="font-caveat space-y-2 text-slate-600 leading-relaxed">
@@ -532,104 +552,214 @@ function App() {
 </section>
 
 
-
-      <section id="solutions" className="py-20 px-6">
-  <div data-aos="fade-up" data-aos-delay="0"
-  className="max-w-6xl mx-auto">
-
-    {/* Section Heading */}
+<section id="industries" className="py-20 px-6">
+  <div data-aos="fade-up" data-aos-delay="0" className="max-w-6xl mx-auto">
     <div className="text-center mb-16">
       <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
         Industry Solutions
       </h2>
       <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-6"></div>
-      <p className="font-homemadeapple text-xl text-slate-500 max-w-3xl mx-auto">
+      <p className="font-handwriting text-xl text-slate-500 max-w-3xl mx-auto">
         We deliver tailored solutions for various sectors
       </p>
     </div>
 
-    {/* Vertical Timeline */}
     <div className="relative max-w-4xl mx-auto">
 
       {/* Vertical Line */}
-      <div 
-      className="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-gradient-to-b from-cyan-400 to-blue-500 opacity-40"></div>
+      <div
+        className="
+          absolute top-0 
+          left-6 md:left-1/2 
+          transform -translate-x-1/2 md:-translate-x-1/2
+          h-full w-[2px] 
+          bg-gradient-to-b from-cyan-400 to-blue-500 opacity-40
+        "
+      ></div>
 
-      {/* Item 1 */}
-      <div data-aos="fade-left" data-aos-delay="150"
-      className="relative flex items-start mb-14">
+      {/* ------- ITEM 1 ------- */}
+      <div className="relative flex items-start mb-14" data-aos="fade-left" data-aos-delay="150">
         <div className="w-1/2 pr-10 text-right hidden md:block"></div>
-        <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-cyan-400 border-4 border-white"></div>
-        <div className="w-full md:w-1/2 md:pl-10 mt-6 md:mt-0">
-          <h3 className="font-permanentmarker text-2xl font-bold text-cyan-500 mb-2">
+
+        {/* Bullet */}
+        <div
+          className="
+            absolute top-2
+            left-6 md:left-1/2 
+            transform -translate-x-1/2 md:-translate-x-1/2
+            w-5 h-5 rounded-full bg-cyan-400 border-4 border-white
+          "
+        ></div>
+
+        <div className="w-full pl-16 md:w-1/2 md:pl-10 mt-2 md:mt-0">
+          <h3 className="font-handwriting text-2xl font-bold text-cyan-500 mb-2">
             Finance & Banking
           </h3>
-          <p className="font-rocksalt text-slate-600">
+          <p className="font-caveat text-slate-600">
             Secure data, compliance, high-availability systems
           </p>
         </div>
       </div>
 
-      {/* Item 2 */}
-      <div data-aos="fade-right" data-aos-delay="300"
-      className="relative flex items-start mb-14 md:flex-row-reverse">
+      {/* ------- ITEM 2 ------- */}
+      <div className="relative flex items-start mb-14 md:flex-row-reverse" data-aos="fade-right" data-aos-delay="300">
         <div className="w-1/2 pr-10 text-right hidden md:block"></div>
-        <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-cyan-400 border-4 border-white"></div>
-        <div className="w-full md:w-1/2 md:pr-10 text-left mt-6 md:mt-0">
-          <h3 className="font-permanentmarker text-2xl font-bold text-cyan-500 mb-2">
+
+        {/* Bullet */}
+        <div
+          className="
+            absolute top-2
+            left-6 md:left-1/2 
+            transform -translate-x-1/2 md:-translate-x-1/2
+            w-5 h-5 rounded-full bg-cyan-400 border-4 border-white
+          "
+        ></div>
+
+        <div className="w-full pl-16 md:w-1/2 md:pl-10 mt-2 md:mt-0">
+          <h3 className="font-handwriting text-2xl font-bold text-cyan-500 mb-2">
             Healthcare
           </h3>
-          <p className="font-rocksalt text-slate-600">
+          <p className="font-caveat text-slate-600">
             Secure patient data management, cloud-based apps
           </p>
         </div>
       </div>
 
-      {/* Item 3 */}
-      <div data-aos="fade-left" data-aos-delay="450"
-      className="relative flex items-start mb-14">
+      {/* ------- ITEM 3 ------- */}
+      <div className="relative flex items-start mb-14" data-aos="fade-left" data-aos-delay="450">
         <div className="w-1/2 pr-10 text-right hidden md:block"></div>
-        <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-cyan-400 border-4 border-white"></div>
-        <div className="w-full md:w-1/2 md:pl-10 mt-6 md:mt-0">
-          <h3 className="font-permanentmarker text-2xl font-bold text-cyan-500 mb-2">
+
+        {/* Bullet */}
+        <div
+          className="
+            absolute top-2
+            left-6 md:left-1/2 
+            transform -translate-x-1/2 md:-translate-x-1/2
+            w-5 h-5 rounded-full bg-cyan-400 border-4 border-white
+          "
+        ></div>
+
+        <div className="w-full pl-16 md:w-1/2 md:pl-10 mt-2 md:mt-0">
+          <h3 className="font-handwriting text-2xl font-bold text-cyan-500 mb-2">
             Retail & E-Commerce
           </h3>
-          <p className="font-rocksalt text-slate-600">
+          <p className="font-caveat text-slate-600">
             Scalable platforms, digital transformation, and analytics
           </p>
         </div>
       </div>
 
-      {/* Item 4 */}
-      <div data-aos="fade-right" data-aos-delay="600"
-      className="relative flex items-start mb-14 md:flex-row-reverse">
+      {/* ------- ITEM 4 ------- */}
+      <div className="relative flex items-start mb-14 md:flex-row-reverse" data-aos="fade-right" data-aos-delay="600">
         <div className="w-1/2 pr-10 text-right hidden md:block"></div>
-        <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-cyan-400 border-4 border-white"></div>
-        <div className="w-full md:w-1/2 md:pr-10 mt-6 md:mt-0">
-          <h3 className="font-permanentmarker text-2xl font-bold text-cyan-500 mb-2">
+
+        {/* Bullet */}
+        <div
+          className="
+            absolute top-2
+            left-6 md:left-1/2 
+            transform -translate-x-1/2 md:-translate-x-1/2
+            w-5 h-5 rounded-full bg-cyan-400 border-4 border-white
+          "
+        ></div>
+
+        <div className="w-full pl-16 md:w-1/2 md:pl-10 mt-2 md:mt-0">
+          <h3 className="font-handwriting text-2xl font-bold text-cyan-500 mb-2">
             Education & Training
           </h3>
-          <p className="font-rocksalt text-slate-600">
+          <p className="font-caveat text-slate-600">
             E-learning platforms, LMS systems, training infrastructure
           </p>
         </div>
       </div>
 
-      {/* Item 5 */}
-      <div data-aos="fade-left" data-aos-delay="750"
-      className="relative flex items-start mb-4">
+      {/* ------- ITEM 5 ------- */}
+      <div className="relative flex items-start mb-4" data-aos="fade-left" data-aos-delay="750">
         <div className="w-1/2 pr-10 text-right hidden md:block"></div>
-        <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-cyan-400 border-4 border-white"></div>
-        <div className="w-full md:w-1/2 md:pl-10 mt-6 md:mt-0">
-          <h3 className="font-permanentmarker text-2xl font-bold text-cyan-500 mb-2">
+
+        {/* Bullet */}
+        <div
+          className="
+            absolute top-2
+            left-6 md:left-1/2 
+            transform -translate-x-1/2 md:-translate-x-1/2
+            w-5 h-5 rounded-full bg-cyan-400 border-4 border-white
+          "
+        ></div>
+
+        <div className="w-full pl-16 md:w-1/2 md:pl-10 mt-2 md:mt-0">
+          <h3 className="font-handwriting text-2xl font-bold text-cyan-500 mb-2">
             Manufacturing & Logistics
           </h3>
-          <p className="font-rocksalt text-slate-600">
+          <p className="font-caveat text-slate-600">
             IoT systems, intelligent automation, digital infrastructure
           </p>
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+
+<section
+  id="solutions"
+    className="w-full py-24 px-6 md:px-12 lg:px-24  bg-gradient-to-br from-cyan-50 to-purple-100"
+    // className="w-full py-24 px-6 md:px-12 lg:px-24 bg-slate-50"
+
+  // data-aos="fade-up"
+>
+  {/* <div className="max-w-6xl mx-auto"> */}
+  <div data-aos="fade-up" data-aos-delay="0"
+  className="max-w-6xl mx-auto">
+    {/* Title */}
+    <div className="text-center mb-12">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+        Our Licensed Products & Solutions
+      </h2>
+
+      <div className="h-1 w-24 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    {/* Card */}
+    <div
+    
+      className="
+        bg-slate-50
+        shadow-xl 
+        rounded-3xl 
+        p-10 md:p-14 
+        border border-gray-200 
+        hover:shadow-2xl 
+        transition-shadow 
+        duration-300 
+        text-center
+      "
+     data-aos="fade-up" data-aos-delay="150"
+    >
+      <span className="inline-block bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold tracking-wide shadow-md mb-8">
+        PRIME999 Official Product
+      </span>
+
+      <p className="font-handwriting text-xl md:text-2xl font-semibold text-gray-800 leading-snug mb-6">
+        Official technology product developed and operated under the{" "}
+        <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-500">
+          FOXCONN IT
+        </span>{" "}
+         <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-700">
+          INFRASTRUCTURE L.L.C
+        </span>{" "}
+        license.
+      </p>
+
+      <p className="font-caveat text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        PRIME999 is a proprietary software solution functioning under the
+        corporate authorization and licensing of FOXCONN IT INFRASTRUCTURE
+        L.L.C, Dubai UAE. All commercial and technical integrations — including
+        communication APIs — are processed entirely through FOXCONN’s certified
+        legal entity, ensuring compliance, security, and enterprise-grade
+        reliability.
+      </p>
     </div>
   </div>
 </section>
@@ -696,7 +826,9 @@ function App() {
         </div>
       </section>
 
-      <footer className="bg-slate-600/80 border-t border-slate-400/50 py-8 px-6">
+      
+
+      <footer className="bg-gradient-to-r from-slate-600 via-slate-500 to-slate-400 border-t border-slate-400/50 py-4 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Server className="w-6 h-6 text-cyan-400" />
